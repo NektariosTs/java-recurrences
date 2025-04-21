@@ -3,7 +3,7 @@ package repeat.chapters.chapter6;
 public class SwapApp {
     public static void main(String[] args) {
 
-        int [] arr = {1, 10};
+        int[] arr = {1, 10};
         swap(arr);
         printArray(arr);
 
@@ -15,6 +15,12 @@ public class SwapApp {
         int tmp = arr[0];
         arr[0] = arr[1];
         arr[1] = tmp;
+    }
+
+    public static void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 
     public static void printArray(int[] arr) {
