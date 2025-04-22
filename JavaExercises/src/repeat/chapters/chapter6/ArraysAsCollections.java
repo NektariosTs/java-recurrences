@@ -62,4 +62,82 @@ public class ArraysAsCollections {
 
         return sum(arr) / (double) arr.length;
     }
+
+    public static boolean anyEven(int[] arr) {
+        boolean isAnyEven = false;
+
+        for (int el : arr) {
+            if (el % 2 == 0) {
+                isAnyEven = true;
+                break;
+            }
+
+        }
+        return isAnyEven;
+
+
+//        for (int el : arr) {
+//            if (el % 2 == 0) {
+//                return true;
+//            }
+//        }
+//        return false;
+    }
+
+    public static boolean moreThanTwoEvens(int[] arr) {
+        boolean isMoreThanTwoEvens = false;
+        int count = 0;
+
+        for (int el : arr) {
+            if (el % 2 == 0)
+                count++;
+        }
+
+        return count > 2;
+
+//        return getEvens(arr).length > 2; to pairnoume ap  tous evens panw
+    }
+
+    public static boolean moreThanTwoConsecutive(int[] arr) {
+        int count = 0;
+
+        for (int i = 0; i < arr.length - 2; i++) {
+            if (arr[i] == arr[i + 1] - 1 && arr[i] == arr[i + 2] - 2) {
+                count++;
+                break;
+            }
+        }
+        return count >= 1;
+    }
+
+    public static boolean moreThanTwoWithSameEnding(int[] arr) {
+        int[] endings = new int[10];
+        boolean isSameEnding = false;
+
+        for (int num : arr) {
+            endings[num % 10]++;
+        }
+//        for (int i = 0; i < arr.length; i++) {
+//            endings[arr[i] % 10]++;
+//        }
+
+        for (int count : endings) {
+            if (count >= 3) {
+                isSameEnding = true;
+                break;
+            }
+        }
+        return isSameEnding;
+    }
+
+    public static boolean AllAreEven(int[] arr) {
+//        return getEvens(arr).length == arr.length;
+        boolean allEven = false;
+        int count = 0;
+
+        for (int el : arr) {
+            if (el % 2 == 0) count++;
+        }
+        return count == arr.length;
+    }
 }
