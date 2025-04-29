@@ -27,7 +27,12 @@ public class Kata {
 
 //        String s;
 //        s = SmashWords.smash("hello", "world", "this", "is", "great");
-//        System.out.println(s);
+//        System.out.println(s);..
+
+
+
+        Object[] haystack1 = {"3", "123124234", null, "needle", "world", "hay", 2, "3", true, false};
+        System.out.println(Kataaa.findNeedle(haystack1));
 
     }
 
@@ -150,7 +155,43 @@ For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should r
 
         return new int[]{count, sum}; //return an array with count of positives and sum of negatives
     }
+
+
+    /*Το διαστημόπλοιο Enterprise έχει συναντήσει κάποιο πρόβλημα
+     κατά τη δημιουργία ενός προγράμματος για να χαιρετά όλους  καθώς επιβιβάζονται.
+     Είναι δουλειά σας να διορθώσετε τον κώδικα και να επαναφέρετε το πρόγραμμα σε λειτουργία!*/
+    public class GrassHopper {
+
+        public static String sayHello(String name) {
+
+            System.out.println("Hello, " + name);
+            return "Hello, " + name;
+        }
+    }
+
+    /*Can you find the needle in the haystack?
+Write a function findNeedle() that takes an array full of junk but containing one "needle"
+After your function finds the needle it should return a message (as a string) that says:
+"found the needle at position " plus the index it found the needle, so:
+Example(Input --> Output)
+["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" */
+
+    public class Kataaa {
+        public static String findNeedle(Object[] haystack) {
+
+
+            for (int i = 0; i < haystack.length; i++) {
+              if ("needle".equals(haystack[i])) {
+                  return  "found the needle at position " + i;
+              }
+            }
+            return "needle not found";
+        }
+    }
 }
+
+
+
 
 
 
