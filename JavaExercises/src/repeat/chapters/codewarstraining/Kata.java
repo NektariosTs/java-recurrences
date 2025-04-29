@@ -1,5 +1,7 @@
 package repeat.chapters.codewarstraining;
 
+import java.util.Arrays;
+
 public class Kata {
     public static void main(String[] args) {
 
@@ -14,10 +16,19 @@ public class Kata {
 //        mtion = Move.move(4,3);
 //        System.out.println(mtion);
 
-        int mathe;
+//        int mathe;
+//
+//        mathe = Kaata.opposite(123);
+//        System.out.println(mathe);
 
-        mathe = Kaata.opposite(123);
-        System.out.println(mathe);
+//        String motion;
+//        motion = sumStr("3", "2");
+//        System.out.println(motion);
+
+//        String s;
+//        s = SmashWords.smash("hello", "world", "this", "is", "great");
+//        System.out.println(s);
+
     }
 
     /*Write a function that takes an array of numbers and returns the sum of the numbers.
@@ -71,6 +82,73 @@ public class Kata {
             }
 
         }
+    }
+
+
+    /*Create a function that takes 2 integers in form of a string as an input,
+    and outputs the sum (also as a string):*/
+
+
+    /*Write a function that takes an array of words and smashes them together into a sentence and returns the sentence.
+     You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word.
+      Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+      Example
+      ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'*/
+    public static String sumStr(String a, String b) {
+        String num1;
+        String num2;
+        int sum;
+
+        num1 = a.isEmpty() ? "0" : a;
+        num1 = b.isEmpty() ? "0" : b;
+
+        sum = Integer.parseInt(a) + Integer.parseInt(b);
+        return String.valueOf(sum);
+    }
+
+    public class SmashWords {
+
+        public static String smash(String... words) {
+            StringBuilder sb = new StringBuilder();
+
+            for (String word : words) {
+                sb.append(word).append(" ");
+            }
+
+            String sentence = sb.toString().trim();
+
+            return sentence;
+        }
+
+    }
+
+    /*Given an array of integers.
+
+Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers.
+ 0 is neither positive nor negative.
+
+If the input is an empty array or is null, return an empty array.
+
+Example
+For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].*/
+
+    public static int[] countPositivesSumNegatives(int[] input) {
+        if (input == null || input.length == 0) return new int[0];
+
+        int count = 0;
+        int sum = 0;
+
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] > 0) {
+                count++;
+            } else if (input[i] < 0) {
+                sum += input[i];
+            }
+        }
+
+
+        return new int[]{count, sum}; //return an array with count of positives and sum of negatives
     }
 }
 
