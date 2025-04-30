@@ -1,5 +1,7 @@
 package repeat.chapters.codewarstraining;
 
+import com.sun.source.tree.BreakTree;
+
 import java.util.Arrays;
 
 public class Kata {
@@ -28,7 +30,6 @@ public class Kata {
 //        String s;
 //        s = SmashWords.smash("hello", "world", "this", "is", "great");
 //        System.out.println(s);..
-
 
 
         Object[] haystack1 = {"3", "123124234", null, "needle", "world", "hay", 2, "3", true, false};
@@ -181,11 +182,27 @@ Example(Input --> Output)
 
 
             for (int i = 0; i < haystack.length; i++) {
-              if ("needle".equals(haystack[i])) {
-                  return  "found the needle at position " + i;
-              }
+                if ("needle".equals(haystack[i])) {
+                    return "found the needle at position " + i;
+                }
             }
             return "needle not found";
+        }
+    }
+
+    /*Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+Examples (Input -> Output):
+* "String"      -> "SSttrriinngg"
+* "Hello World" -> "HHeelllloo  WWoorrlldd"
+* "1234!_ "     -> "11223344!!__  "*/
+    public class Solution {
+        public static String doubleChar(String s) {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i <= s.length(); i++) {
+               char c = s.charAt(i);
+               stringBuilder.append(c).append(c);
+            }
+            return stringBuilder.toString();
         }
     }
 }
