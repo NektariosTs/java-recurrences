@@ -1,31 +1,21 @@
-package repeat.chapters.chapter12;
+package repeat.chapters.chapter12.model;
 
 /*
- * Data class
- * POJO(plain old java object
- * Java Bean (prepei na exei ena default constructor, getters kai setters kai private pedia)
- * */
-public class Student {
-    private static int studentsCount = 0;
+*Java Bean(data klash pou exei ena default constructor , private pedia kai getters kai setters)
+**/
+public class Teacher {
     private int id;
     private String firstname;
     private String lastname;
 
-    //Default constructor
-    public Student() {
-        studentsCount++;
+    public Teacher() {
+
     }
 
-    //Overloaded uperofrtomenos constructor
-    public Student(int id, String firstname, String lastname) {
+    public Teacher(int id, String firstname, String lastname) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
-        studentsCount++;
-    }
-
-    public static int getStudentsCount() {
-         return studentsCount;
     }
 
     public int getId() {
